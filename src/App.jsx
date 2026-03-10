@@ -33,7 +33,7 @@ function App() {
           fontSize: '14px',
           backdropFilter: 'blur(5px)'
         }}>
-          🚨 EDUCATIONAL PORTFOLIO PROJECT. This is NOT Netflix. Please do not enter real credentials. 🚨
+           PORTFOLIO PROJECT. This is NOT Netflix.🚨
         </div>
         <Routes>
           {/* Public Landing Page */}
