@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './welcomeModal.css';
+import './welcomemodal.css';
 import Ntflix from '../../assets/Ntflix-logo.svg';
 
 const WelcomeModal = () => {
