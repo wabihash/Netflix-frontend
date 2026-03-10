@@ -19,6 +19,22 @@ function App() {
   return (
     <Router>
       <div className='App'>
+        <div style={{
+          backgroundColor: 'rgba(229, 9, 20, 0.9)',
+          color: 'white',
+          textAlign: 'center',
+          padding: '12px',
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 9999,
+          fontWeight: 'bold',
+          fontSize: '14px',
+          backdropFilter: 'blur(5px)'
+        }}>
+          🚨 EDUCATIONAL PORTFOLIO PROJECT. This is NOT Netflix. Please do not enter real credentials. 🚨
+        </div>
         <Routes>
           {/* Public Landing Page */}
           <Route path="/" element={<Landing />} />
