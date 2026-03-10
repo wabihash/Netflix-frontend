@@ -17,7 +17,7 @@ import ComingSoon from './components/ComingSoon/ComingSoon.jsx'
 
 function App() {
   return (
-    <Router basename="/netflix-wabi/">
+    <Router>
       <div className='App'>
         <Routes>
           {/* Public Landing Page */}
