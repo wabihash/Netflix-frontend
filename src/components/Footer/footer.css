@@ -1,0 +1,147 @@
+.footer_outer_container {
+    background-color: #111;
+    color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_inner_container {
+    width: 68%;
+}
+
+.footer_icons {
+    width: 20%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer_icons a {
+    color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+}
+
+.footer_icons a:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.footer_data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_data ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.footer_data ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.footer_data ul li:hover a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.copy-write {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #444;
+    text-align: center;
+}
+
+@media(max-width:1100px){
+    .footer_inner_container {
+    width: 88%;
+}
+}
+@media(max-width:830px){
+    .footer_inner_container {
+    width: 92%;
+}
+.footer_data ul li {
+    font-size: 15px;
+}
+
+
+}
+@media(max-width:725px){
+    .footer_inner_container {
+    width: 95%;
+}
+.footer_data ul li {
+    font-size: 13px;
+}
+.footer_data {
+    display: flex;
+    justify-content: space-evenly
+}
+
+.footer_data ul {
+    justify-content: space-between;
+    gap: 5px;
+}
+.copy-write {
+    margin-top: 23px;
+   
+}
+
+.footer_outer_container {
+    margin-top: -10px;
+}
+
+}
+@media (max-width: 600px) {
+
+  /* Full width container */
+  .footer_inner_container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* Icons centered */
+  .footer_icons {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+
+  /* Wrap footer links */
+  .footer_data {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  /* Each column = 50% width */
+  .footer_data > div {
+    width: 45%;
+  }
+
+  /* Remove height restriction */
+  .footer_data ul {
+    height: auto;
+    gap: 4px;
+  }
+
+  .footer_data ul li {
+    font-size: 13px;
+  }
+
+  .copy-write {
+    text-align: center;
+    margin-top: 5px;
+  }
+}

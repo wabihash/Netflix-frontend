@@ -1,0 +1,123 @@
+.banner {
+  position: relative;
+  color: white;
+  height: 448px;
+  object-fit: cover;
+  
+}
+
+/* Content inside banner */
+.banner__contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+  
+}
+
+/* Movie title */
+.banner__title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+/* Buttons container */
+.banner__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons */
+.banner__button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding: 0.5rem 2rem;
+  background-color: rgba(51, 51, 51, 0.6);
+  transition: all 0.2s ease-in-out;
+}
+
+.banner__button:hover {
+  color: #000;
+  background-color: #e6e6e6;
+}
+
+/* Play button special style */
+.banner__button.play:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Description text */
+.banner__description {
+  width: 45rem;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  max-width: 360px;
+  height: 80px;
+}
+
+/* Fade bottom effect */
+.banner__fadeBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    height: 360px;
+  }
+
+  .banner__title {
+    font-size: 2rem;
+  }
+
+  .banner__description {
+    width: 60%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner {
+    height: 360px;
+  }
+
+  .banner__title {
+    font-size: 1.3rem;
+  }
+
+  .banner__description {
+    width: 80%;
+    max-width: none;
+  }
+  .banner__contents {
+  padding-top: 110px;
+ 
+}
+.banner__button {
+  font-weight: 300;
+  padding: 0.3rem 1.2rem;
+}
+
+.banner__description {
+  line-height: 1.3;
+  padding-top: 0.7rem;
+  font-size: 0.8rem;
+}
+
+}
+

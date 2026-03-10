@@ -1,0 +1,377 @@
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    overflow-y: auto;
+}
+
+.modal_content {
+    background: #181818;
+    width: 900px;
+    max-width: 95vw;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 60px;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal_close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #181818;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal_close:hover {
+    background: #333;
+}
+
+.modal_banner {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Video Container ───────────────────────────────────────── */
+.video_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #000;
+}
+
+.youtube_player {
+    width: 100%;
+    height: 100%;
+}
+
+.youtube_player iframe {
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let our custom controls handle clicks */
+}
+
+.video_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(24,24,24,0.95) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* ─── Custom Controls ───────────────────────────────────────── */
+.custom_controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px 8px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.custom_controls.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ─── Progress Bar ──────────────────────────────────────────── */
+.progress_bar_wrapper {
+    width: 100%;
+    padding: 8px 0;
+    cursor: pointer;
+    user-select: none;
+    touch-action: none;
+}
+
+.progress_bar_bg {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: height 0.15s ease;
+}
+
+.progress_bar_wrapper:hover .progress_bar_bg {
+    height: 6px;
+}
+
+.progress_bar_fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #e50914;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.progress_bar_thumb {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 14px;
+    height: 14px;
+    background: #e50914;
+    border-radius: 50%;
+    transition: transform 0.15s ease;
+    pointer-events: none;
+    box-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+.progress_bar_wrapper:hover .progress_bar_thumb {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* ─── Bottom Controls Row ───────────────────────────────────── */
+.controls_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.controls_left, .controls_right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ctrl_btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.ctrl_btn:hover {
+    color: #e50914;
+    background: rgba(255,255,255,0.1);
+}
+
+.ctrl_btn svg {
+    font-size: 1.5rem;
+}
+
+.time_display {
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0 4px;
+}
+
+/* ─── Modal Banner Details (Title + Action Buttons) ─────────── */
+.modal_image_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.modal_image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #181818 0%, transparent 60%);
+}
+
+.modal_banner_details {
+    position: absolute;
+    bottom: 80px;   /* sits above the ~60px custom controls bar */
+    left: 50px;
+    z-index: 4;
+    pointer-events: none; /* title is display only */
+}
+
+.modal_banner_details h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    pointer-events: none;
+}
+
+.modal_actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    pointer-events: all; /* buttons must stay clickable */
+}
+
+.btn_play {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn_play:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn_icon {
+    background: rgba(42, 42, 42, 0.6);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+}
+
+.btn_icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
+
+/* ─── Modal Body ────────────────────────────────────────────── */
+.modal_body {
+    padding: 40px 50px;
+}
+
+.modal_grid {
+    display: flex;
+    gap: 50px;
+}
+
+.modal_left {
+    flex: 2.5;
+}
+
+.modal_right {
+    flex: 1.5;
+    font-size: 0.9rem;
+}
+
+.meta_info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.match_score {
+    color: #46d369;
+    font-weight: 700;
+}
+
+.maturity {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0 5px;
+    font-size: 0.8rem;
+}
+
+.hd {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 0.65rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 800;
+}
+
+.overview {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.modal_right span {
+    color: #888;
+}
+
+.modal_right p {
+    margin-bottom: 12px;
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .modal_grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .modal_banner_details {
+        bottom: 75px;
+        left: 16px;
+    }
+    .modal_banner_details h1 {
+        font-size: 1.4rem;
+    }
+    .modal_banner {
+        height: 300px;
+    }
+    .modal_actions {
+        gap: 10px;
+    }
+    .btn_play {
+        padding: 5px 15px;
+        font-size: 0.9rem;
+    }
+    .btn_icon {
+        width: 34px;
+        height: 34px;
+    }
+    .modal_body {
+        padding: 20px;
+    }
+}

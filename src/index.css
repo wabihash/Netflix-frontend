@@ -1,0 +1,72 @@
+/* Import Google Fonts with all weight variants */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* CSS Custom Properties (Variables) for easy theming */
+:root {
+    /* Font Variables */
+    --font-base: 'Lexend', sans-serif;        /* Primary font */
+    --font-second-base: 'Inter', sans-serif;  /* Secondary font */
+    
+    /* Color Variables */
+    --bg-color: #111;            /* Dark background */
+    --primary-color: #ffffff;    /* White text */
+    --secondary-color: #e50914;  /* Netflix Red */
+    
+    /* You can add more variables as needed */
+    --accent-color: #007bff;
+    --text-muted: #888;
+    --card-bg: #222;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+html, body {
+ 
+  height: 100%;
+  overflow-x: hidden; /* OK */
+  overflow-y: auto;   /* REQUIRED for sticky */
+
+
+}
+
+
+/* Body Styles */
+body {
+    background: var(--bg-color);           /* Use the bg-color variable */
+    color: var(--primary-color);           /* Use the primary color for text */
+    font-family: var(--font-base);         /* Use Lexend as default font */
+    line-height: 1.6;                      /* Better readability */
+    min-height: 100vh;                     /* Full viewport height */
+}
+
+/* Global Toast Notification */
+.global__toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    z-index: 10000;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border-left: 4px solid #e50914;
+    animation: toastSlideUp 0.3s ease;
+}
+
+.global__toast.error {
+    border-left: 4px solid #ff0000;
+    background: #e50914;
+}
+
+@keyframes toastSlideUp {
+    from { bottom: 20px; opacity: 0; }
+    to { bottom: 40px; opacity: 1; }
+}

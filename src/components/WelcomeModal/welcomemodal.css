@@ -1,0 +1,129 @@
+.welcome_modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Ensure it stays on top */
+    animation: fadeInOverlay 0.4s ease-out;
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.welcome_modal_content {
+    background-color: #1a1a1a;
+    width: 90%;
+    max-width: 550px;
+    padding: 60px 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    border: 1px solid #333;
+    animation: slideInModal 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes slideInModal {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.welcome_header {
+    margin-bottom: 35px;
+}
+
+.welcome_logo {
+    height: 40px;
+    width: auto;
+}
+
+.welcome_body h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.welcome_body p {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.welcome_features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    margin: 0 auto 40px;
+    max-width: 320px;
+}
+
+.feature_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.feature_dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e50914;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.welcome_footer {
+    width: 100%;
+}
+
+.welcome_btn {
+    background-color: #e50914;
+    color: #fff;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.welcome_btn:hover {
+    background-color: #f40612;
+}
+
+.welcome_btn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+    .welcome_modal_content {
+        width: 95%;
+        padding: 40px 20px;
+    }
+    
+    .welcome_body h1 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome_body p {
+        font-size: 1rem;
+    }
+}

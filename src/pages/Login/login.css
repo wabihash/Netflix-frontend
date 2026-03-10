@@ -1,0 +1,181 @@
+.login_screen {
+    position: relative;
+    height: 100vh;
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bca1-07011d1ec143/ace6aa08-3a6d-4743-95aa-9da6c16c29b4/US-en-20220502-popsignuptwilight-perspective_alpha_website_medium.jpg') center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_logo {
+    position: absolute;
+    top: 25px;
+    left: 45px;
+    height: 45px;
+    z-index: 10;
+}
+
+.login_gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.login_container {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 60px 68px 40px;
+    width: 450px;
+    min-height: 550px;
+    border-radius: 4px;
+}
+
+.login_container h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.login_container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_container input[type="text"],
+.login_container input[type="email"],
+.login_container input[type="password"],
+.login_container input {
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding: 16px 20px;
+    margin-bottom: 20px; /* Slightly more space */
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    transition: background 0.2s, box-shadow 0.2s, border-bottom 0.2s;
+    box-sizing: border-box;
+}
+
+.login_container input:focus {
+    background: #454545;
+    border-bottom: 2px solid #e50914;
+    box-shadow: 0 0 8px rgba(229, 9, 20, 0.3);
+}
+
+/* Ensure consistent placeholder color */
+.login_container input::placeholder {
+  color: #8c8c8c;
+  font-weight: 400;
+}
+
+/* Fix browser autofill background */
+.login_container input:-webkit-autofill,
+.login_container input:-webkit-autofill:hover,
+.login_container input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0px 1000px #333 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.login_container button {
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.login_container button:active {
+    transform: scale(0.98);
+}
+
+.login_container button:hover {
+    background: #f40612;
+}
+
+.login_help {
+    display: flex;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.remember_me {
+    display: flex;
+    align-items: center;
+}
+
+.remember_me input {
+    margin-right: 5px;
+}
+
+.login_help a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.login_help a:hover {
+    text-decoration: underline;
+}
+
+.login_footer {
+    margin-top: 50px;
+    color: #737373;
+    font-size: 16px;
+}
+
+.login_footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login_footer a:hover {
+    text-decoration: underline;
+}
+
+.recaptcha_notice {
+    margin-top: 13px;
+    font-size: 13px;
+}
+
+.recaptcha_notice a {
+    color: #0071eb;
+}
+
+@media (max-width: 500px) {
+    .login_container {
+        width: 100%;
+        padding: 60px 20px;
+        background: black;
+    }
+    .login_screen {
+        background: black;
+    }
+}
+
+/* Beautiful Error Box */
+.login_error_box {
+    background-color: #e87c03;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}

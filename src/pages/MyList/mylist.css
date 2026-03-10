@@ -1,0 +1,85 @@
+.mylist_container {
+    padding: 100px 40px;
+    background-color: #111;
+    min-height: 100vh;
+    color: white;
+}
+
+.mylist_container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e5e5e5;
+}
+
+.mylist_empty {
+    text-align: center;
+    color: #808080;
+    margin-top: 50px;
+}
+
+.mylist_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.mylist_item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.mylist_item:hover {
+    transform: scale(1.05);
+}
+
+.mylist_item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mylist_item_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.mylist_item:hover .mylist_item_overlay {
+    opacity: 1;
+}
+
+.mylist_item_overlay span {
+    color: #fff;
+    font-weight: bold;
+    background-color: #e50914;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.mylist_loading {
+    padding: 150px;
+    color: white;
+    text-align: center;
+}
+
+@media(max-width: 600px) {
+    .mylist_container {
+        padding: 80px 15px;
+    }
+    .mylist_grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
