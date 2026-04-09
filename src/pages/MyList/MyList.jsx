@@ -47,7 +47,7 @@ const MyList = () => {
             });
             setMovies(response.data);
             showToast("Movie removed from your list");
-        } catch (error) {
+        } catch {
             showToast("Could not remove movie", "error");
         }
     }

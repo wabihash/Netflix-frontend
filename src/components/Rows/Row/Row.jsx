@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import "./row.css";
 import axios from "../../../utilis/Axios";
 import backendAxios from 'axios';
-import movieTrailer from 'movie-trailer';
-import YouTube from 'react-youtube';
 import MovieDetailsModal from '../../MovieDetailsModal/MovieDetailsModal';
 
 const Row = ({ title, fetchUrl, isLargeRow }) => {
@@ -97,4 +95,4 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     );
 }
 
-export default Row;
+export default Row;

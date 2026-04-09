@@ -36,7 +36,7 @@ const MovieDetailsModal = ({ movie, onClose, showToast }) => {
                     try {
                         const response = await backendAxios.get(`https://api.themoviedb.org/3/movie/${movie.id}/videos?api_key=${API_KEY}`);
                         trailerData = response.data.results.find(vid => vid.type === "Trailer" && vid.site === "YouTube");
-                    } catch (e) {
+                    } catch {
                         const response = await backendAxios.get(`https://api.themoviedb.org/3/tv/${movie.id}/videos?api_key=${API_KEY}`);
                         trailerData = response.data.results.find(vid => vid.type === "Trailer" && vid.site === "YouTube");
                     }
@@ -139,13 +139,13 @@ const MovieDetailsModal = ({ movie, onClose, showToast }) => {
         return (x / rect.width) * 100;
     };
 
-    const seekTo = (percent) => {
+    const seekTo = useCallback((percent) => {
         if (!playerRef.current || duration === 0) return;
         const seekTime = (percent / 100) * duration;
         playerRef.current.seekTo(seekTime, true);
         setProgress(percent);
         setCurrentTime(seekTime);
-    };
+    }, [duration]);
 
     const handleProgressClick = (e) => {
         e.stopPropagation();
@@ -168,7 +168,7 @@ const MovieDetailsModal = ({ movie, onClose, showToast }) => {
         if (!isDragging) return;
         seekTo(getSeekPosition(e));
         setIsDragging(false);
-    }, [isDragging, duration]);
+    }, [isDragging, seekTo]);
 
     useEffect(() => {
         if (isDragging) {

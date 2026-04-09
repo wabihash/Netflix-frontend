@@ -18,10 +18,9 @@ const Header = () => {
     const [show, setShow] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(() => localStorage.getItem('userName'));
     const [notificationsOpen, setNotificationsOpen] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
-    const [mobileSearchActive, setMobileSearchActive] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -32,9 +31,6 @@ const Header = () => {
                 setShow(false);
             }
         };
-
-        const storedUser = localStorage.getItem('userName');
-        if (storedUser) setUser(storedUser);
 
         window.addEventListener("scroll", handleScroll);
 
@@ -60,7 +56,6 @@ const Header = () => {
         if (searchQuery.trim()) {
             navigate(`/browse/search?q=${searchQuery}`);
             setSearchQuery("");
-            setMobileSearchActive(false);
         }
     };
 

@@ -3,22 +3,18 @@ import './welcomemodal.css';
 import Ntflix from '../../assets/Ntflix-logo.svg';
 
 const WelcomeModal = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const [userName, setUserName] = useState("User");
+    const [userName] = useState(() => localStorage.getItem('userName') || "User");
+    const [isVisible, setIsVisible] = useState(() => {
+        const token = localStorage.getItem('userToken');
+        const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
+        return Boolean(token && !hasSeenWelcome);
+    });
 
     useEffect(() => {
-        // Only show if user is logged in and hasn't seen it this session
-        const name = localStorage.getItem('userName');
-        const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
-        const token = localStorage.getItem('userToken');
-
-        if (token && !hasSeenWelcome) {
-            setUserName(name || "User");
-            setIsVisible(true);
-            // Mark as seen
+        if (isVisible) {
             localStorage.setItem('hasSeenWelcome', 'true');
         }
-    }, []);
+    }, [isVisible]);
 
     const closeModal = () => {
         setIsVisible(false);
