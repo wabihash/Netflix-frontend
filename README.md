@@ -1,6 +1,6 @@
-# Netflix Frontend Clone - Portfolio Build
+# Netflix Frontend Clone - Client-Ready React Portfolio Project
 
-A production-style Netflix-inspired frontend built with React + Vite, focused on smooth browsing UX, reusable components, and portfolio-quality code structure.
+Netflix-inspired frontend experience engineered for freelance delivery: clean architecture, strong UX polish, and production-ready code quality.
 
 Live-style product goals:
 - Keep users engaged with fast, scroll-friendly movie discovery.
@@ -34,6 +34,12 @@ I designed and built the frontend architecture end-to-end, including:
 - Axios
 - Material UI Icons
 - CSS modules/files for component-level styling
+
+## Screenshots
+
+## Demo GIF
+
+![Demo Flow](docs/images/demo.gif)
 
 ## Screenshots
 
